@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f4f3ef">
+<title>Тестовый слайд 1 | Executive Summary</title>
+<style>
+:root{--bg:#f4f3ef;--paper:#fff;--ink:#101114;--muted:#70737b;--line:#d9d9d6;--blue:#087bc1;--sky:#17aee4;--orange:#ff4f00;--coral:#ef4557;--pink:#df6ca3;--purple:#57346c;--navy:#1d428a;--radius:30px;--shadow:0 24px 70px rgba(16,17,20,.10);}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Cera Pro","Avenir Next","Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body.modal-open{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button{color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1180px,calc(100% - 48px));margin-inline:auto}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(244,243,239,.88);backdrop-filter:blur(16px);border-bottom:1px solid rgba(16,17,20,.08)}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{display:flex;align-items:center;gap:13px;font-weight:850;white-space:nowrap}
+.brand-mark{font-size:16px;letter-spacing:-.04em} .brand-mark b{color:var(--orange)}
+.brand-divider{width:1px;height:20px;background:#bbb}
+.brand-project{font-size:13px;color:var(--muted);font-weight:700}
+.navlinks{display:flex;gap:6px;align-items:center}
+.navlinks a{font-size:13px;font-weight:720;padding:10px 12px;border-radius:999px;color:#5f6168;transition:.2s ease}
+.navlinks a:hover,.navlinks a.active{background:#fff;color:#111;box-shadow:0 4px 18px rgba(0,0,0,.05)}
+.hero{padding:54px 0 56px;min-height:calc(100vh - 72px);display:grid;align-items:center}
+.hero-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+.hero-copy h1{font-size:clamp(58px,7vw,100px);line-height:.87;letter-spacing:-.065em;margin:16px 0 26px;max-width:620px}
+.hero-copy h1 span{display:block;color:var(--blue)}
+.hero-copy p{font-size:20px;line-height:1.46;max-width:650px;color:#3f4248;margin:0 0 32px}
+.cta-row{display:flex;gap:10px;flex-wrap:wrap}
+.btn{border:0;border-radius:999px;padding:14px 19px;background:#111;color:#fff;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:transform .18s ease,box-shadow .18s ease,background .18s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.13)}
+.btn.secondary{background:#fff;color:#111;border:1px solid rgba(16,17,20,.1)}
+.hero-visual{position:relative}
+.hero-frame{border-radius:36px 92px 36px 36px;overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(16,17,20,.08);background:#fff;transform:rotate(.35deg)}
+.hero-frame img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.hero-chip{position:absolute;left:-24px;bottom:-24px;max-width:260px;background:linear-gradient(130deg,rgba(32,47,128,.95),rgba(201,45,91,.92));color:#fff;padding:22px 24px;border-radius:24px 46px 24px 24px;box-shadow:0 20px 55px rgba(78,47,96,.25)}
+.hero-chip strong{display:block;font-size:28px;letter-spacing:-.045em} .hero-chip span{font-size:13px;opacity:.83;line-height:1.4}
+.section{padding:94px 0;border-top:1px solid rgba(16,17,20,.09)}
+.section-head{display:grid;grid-template-columns:260px 1fr;gap:50px;align-items:end;margin-bottom:42px}
+.section-head h2{font-size:clamp(38px,5vw,62px);line-height:.94;letter-spacing:-.052em;margin:0;max-width:900px}
+.summary-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.summary-card{background:#fff;border:1px solid rgba(16,17,20,.09);padding:30px;border-radius:28px 60px 28px 28px;min-height:260px;display:flex;flex-direction:column;justify-content:space-between}
+.summary-card .num{font-size:12px;font-weight:900;color:var(--orange);letter-spacing:.12em}
+.summary-card h3{font-size:27px;line-height:1.04;letter-spacing:-.035em;margin:28px 0 12px}
+.summary-card p{font-size:16px;line-height:1.55;color:#4c4e54;margin:0}
+.slide-link{margin-top:18px;align-self:flex-start;border:0;background:transparent;padding:0;font-weight:850;font-size:13px;cursor:pointer;border-bottom:1px solid #bbb}
+.slide-link:hover{border-color:#111}
+.takeaways{display:grid;grid-template-columns:1fr;gap:10px}
+.takeaway{display:grid;grid-template-columns:72px 1fr auto;gap:26px;align-items:center;background:#fff;padding:23px 26px;border-radius:20px;border:1px solid rgba(16,17,20,.08);transition:.2s ease}
+.takeaway:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(0,0,0,.06)}
+.takeaway .index{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:#fff;font-weight:850}
+.takeaway:nth-child(2) .index,.takeaway:nth-child(6) .index{background:var(--blue)}
+.takeaway:nth-child(3) .index{background:var(--coral)}
+.takeaway:nth-child(4) .index{background:var(--purple)}
+.takeaway:nth-child(5) .index{background:var(--orange)}
+.takeaway h3{font-size:22px;letter-spacing:-.025em;margin:0 0 6px}
+.takeaway p{margin:0;color:#5d6067;line-height:1.45}
+.takeaway button{border:1px solid #ddd;background:#fafafa;border-radius:999px;padding:11px 14px;cursor:pointer;font-weight:800;white-space:nowrap}
+.takeaway button:hover{background:#111;color:#fff;border-color:#111}
+.numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.metric{min-height:210px;border-radius:28px 58px 28px 28px;background:#fff;padding:25px;border:1px solid rgba(16,17,20,.08);display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.metric::after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;right:-48px;top:-48px;background:var(--accent,#ddd);opacity:.18}
+.metric .value{font-size:48px;font-weight:900;letter-spacing:-.06em;line-height:.92}
+.metric .label{font-size:14px;line-height:1.35;color:#55585f;max-width:190px}
+.metric .source{font-size:11px;font-weight:850;margin-top:16px;color:var(--muted);cursor:pointer}
+.story{display:grid;gap:12px}
+.story-card{display:grid;grid-template-columns:160px 1fr auto;gap:26px;align-items:center;background:#fff;border-radius:24px;border:1px solid rgba(16,17,20,.08);padding:24px 26px}
+.story-card .range{font-size:12px;font-weight:900;letter-spacing:.08em;color:var(--muted)}
+.story-card h3{margin:4px 0 5px;font-size:24px;letter-spacing:-.03em}
+.story-card p{margin:0;color:#5d6067;line-height:1.45}
+.story-card button{border:0;background:#111;color:#fff;border-radius:999px;padding:11px 14px;cursor:pointer;font-weight:800}
+.viewer-section{padding-bottom:120px}
+.navigator-tools{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:18px}
+.filters{display:flex;gap:7px;flex-wrap:wrap}
+.filter{border:1px solid #d6d6d2;background:transparent;border-radius:999px;padding:9px 12px;font-size:12px;font-weight:800;cursor:pointer}
+.filter.active,.filter:hover{background:#111;color:#fff;border-color:#111}
+.search{border:1px solid #d6d6d2;background:#fff;border-radius:999px;padding:11px 16px;min-width:250px;outline:none}
+.search:focus{border-color:#888;box-shadow:0 0 0 3px rgba(0,0,0,.05)}
+.slide-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.slide-card{background:#fff;border:1px solid rgba(16,17,20,.1);border-radius:18px;overflow:hidden;cursor:pointer;transition:.2s ease}
+.slide-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.08)}
+.slide-thumb{position:relative;background:#e8e8e5;aspect-ratio:16/9;overflow:hidden}
+.slide-thumb img{width:100%;height:100%;object-fit:cover}
+.slide-no{position:absolute;top:9px;left:9px;background:rgba(17,17,17,.84);color:#fff;font-size:11px;font-weight:900;padding:6px 8px;border-radius:999px;backdrop-filter:blur(8px)}
+.key-badge{position:absolute;right:9px;top:9px;background:var(--coral);color:#fff;font-size:10px;font-weight:900;padding:6px 8px;border-radius:999px}
+.slide-meta{padding:13px 14px 15px}
+.slide-meta h4{font-size:14px;line-height:1.24;letter-spacing:-.015em;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:35px}
+.slide-meta span{font-size:11px;color:var(--muted);font-weight:750;display:block;margin-top:8px}
+.empty{display:none;padding:40px;border:1px dashed #bbb;border-radius:24px;text-align:center;color:var(--muted)}
+.footer{padding:34px 0 50px;border-top:1px solid rgba(16,17,20,.09);font-size:12px;color:#6c6f75}
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(7,8,10,.84);backdrop-filter:blur(8px)}
+.modal.open{display:flex}
+.modal-shell{width:min(1240px,96vw);max-height:94vh;background:#111319;border-radius:26px;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.5);display:grid;grid-template-rows:auto 1fr auto}
+.modal-top,.modal-bottom{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 16px;color:#fff}
+.modal-title{font-size:14px;font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.modal-actions{display:flex;gap:8px;align-items:center}
+.icon-btn{border:1px solid rgba(255,255,255,.17);background:rgba(255,255,255,.08);color:#fff;border-radius:999px;padding:9px 12px;cursor:pointer;font-weight:800}
+.icon-btn:hover{background:#fff;color:#111}
+.modal-stage{background:#050506;display:grid;place-items:center;min-height:0;overflow:auto}
+.modal-stage img{max-width:100%;max-height:calc(94vh - 120px);width:auto;height:auto}
+.modal-bottom .hint{font-size:11px;opacity:.62}
+.modal-bottom .counter{font-size:12px;font-weight:900}
+.reveal{opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease} .reveal.in{opacity:1;transform:none}
+@media(max-width:980px){.navlinks{display:none}.hero{min-height:auto;padding:44px 0 78px}.hero-grid{grid-template-columns:1fr;gap:44px}.hero-copy h1{font-size:70px}.hero-visual{max-width:800px}.section-head{grid-template-columns:1fr;gap:12px}.numbers{grid-template-columns:repeat(2,1fr)}.slide-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:720px){.container{width:min(100% - 28px,1180px)}.nav{height:64px}.brand-project,.brand-divider{display:none}.hero{padding-top:28px}.hero-copy h1{font-size:54px}.hero-copy p{font-size:17px}.hero-chip{position:relative;left:auto;bottom:auto;margin:-16px 14px 0;max-width:none}.section{padding:70px 0}.summary-grid{grid-template-columns:1fr}.takeaway{grid-template-columns:52px 1fr;gap:14px}.takeaway button{grid-column:2;justify-self:start}.numbers{grid-template-columns:1fr 1fr}.metric{min-height:180px}.metric .value{font-size:40px}.story-card{grid-template-columns:1fr;gap:10px}.story-card button{justify-self:start}.slide-grid{grid-template-columns:repeat(2,1fr);gap:10px}.search{width:100%;min-width:0}.modal{padding:0}.modal-shell{width:100vw;height:100dvh;max-height:none;border-radius:0}.modal-stage img{max-height:calc(100dvh - 120px)}.modal-bottom .hint{display:none}}
+@media(max-width:460px){.hero-copy h1{font-size:46px}.numbers{grid-template-columns:1fr}.slide-grid{grid-template-columns:1fr 1fr}.slide-meta h4{font-size:12px}.slide-meta{padding:10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header class="topbar">
+ <div class="container nav">
+  <a class="brand" href="#top"><span class="brand-mark"><b>Presentation</b></span><span class="brand-divider"></span><span class="brand-project">Тестовый слайд 1</span></a>
+  <nav class="navlinks" aria-label="Основная навигация">
+   <a href="#summary">Summary</a><a href="#takeaways">Takeaways</a><a href="#numbers">Key numbers</a><a href="#story">Story</a><a href="#slides">Slides</a>
+  </nav>
+ </div>
+</header>
+<main id="top">
+<section class="hero" aria-labelledby="hero-title">
+ <div class="container hero-grid">
+  <div class="hero-copy reveal">
+   <div class="eyebrow">Executive summary</div>
+   <h1 id="hero-title">Тестовый слайд 1 <span>Presentation</span></h1>
+   <p>A concise, source-grounded overview of the presentation.</p>
+   <div class="cta-row"><a class="btn" href="#takeaways">Explore the key findings <span>↓</span></a><button class="btn secondary" data-open-slide="1">Открыть презентацию →</button></div>
+  </div>
+  <div class="hero-visual reveal">
+   <button class="hero-frame" data-open-slide="1" aria-label="Открыть слайд 1"><img src="assets/slides/slide-001.jpg" alt="Слайд 1: Тестовый слайд 1"></button>
+   <div class="hero-chip"><strong>3 слайдов</strong><span>Executive layer сверху, оригинальные слайды — в один клик.</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="summary">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">01 · Executive summary</div><h2>Презентация — в кратком изложении.</h2></div>
+  <div class="summary-grid">
+   <article class="summary-card reveal"><div><span class="num">01</span><h3>Тестовый слайд 1</h3><p>Тестовый слайд 1
+Содержательное описание для проверки полного PPTX-конвейера, страница 1.</p></div><button class="slide-link" data-open-slide="1">View slide 1 →</button></article>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="takeaways">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">02 · Key takeaways</div><h2>Главные выводы презентации.</h2></div>
+  <div class="takeaways">
+   <article class="takeaway reveal"><div class="index">1</div><div><h3>Тестовый слайд 1</h3><p>Тестовый слайд 1
+Содержательное описание для проверки полного PPTX-конвейера, страница 1.</p></div><button data-open-slide="1">View slide 1 →</button></article>
+   <article class="takeaway reveal"><div class="index">2</div><div><h3>Тестовый слайд 2</h3><p>Тестовый слайд 2
+Содержательное описание для проверки полного PPTX-конвейера, страница 2.</p></div><button data-open-slide="2">View slide 2 →</button></article>
+   <article class="takeaway reveal"><div class="index">3</div><div><h3>Тестовый слайд 3</h3><p>Тестовый слайд 3
+Содержательное описание для проверки полного PPTX-конвейера, страница 3.</p></div><button data-open-slide="3">View slide 3 →</button></article>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="numbers">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">03 · Key numbers</div><h2>Цифры, которые задают рамку решения.</h2></div>
+  <div class="numbers">
+   <article class="metric reveal" style="--accent:#ef4557"><div class="value">3</div><div><div class="label">slides in the source</div><button class="source slide-link" data-open-slide="1">Slide 1 →</button></div></article>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="story">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">04 · Story / Sections</div><h2>Исходная история презентации — без перестройки смысла.</h2></div>
+  <div class="story" id="storyList"></div>
+ </div>
+</section>
+
+<section class="section viewer-section" id="slides">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">05 · Slide navigator</div><h2>Любой исходный слайд — в один клик.</h2></div>
+  <div class="navigator-tools"><div class="filters" id="filters"></div><input class="search" id="slideSearch" type="search" placeholder="Поиск по заголовкам…" aria-label="Поиск по слайдам"></div>
+  <div class="slide-grid" id="slideGrid"></div><div class="empty" id="emptyState">По выбранному фильтру ничего не найдено.</div>
+ </div>
+</section>
+</main>
+<footer class="footer"><div class="container">Digital companion на основе исходной презентации. Нумерация соответствует порядку слайдов (1–3).</div></footer>
+
+<div class="modal" id="slideModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+ <div class="modal-shell">
+  <div class="modal-top"><div class="modal-title" id="modalTitle">Слайд</div><div class="modal-actions"><button class="icon-btn" id="backSummary">Back to summary</button><button class="icon-btn" id="closeModal" aria-label="Закрыть">✕</button></div></div>
+  <div class="modal-stage"><img id="modalImage" src="" alt=""></div>
+  <div class="modal-bottom"><div class="modal-actions"><button class="icon-btn" id="prevSlide">← Previous</button><button class="icon-btn" id="nextSlide">Next →</button></div><div class="hint">← / → для навигации · Esc закрывает</div><div class="counter" id="modalCounter"></div></div>
+ </div>
+</div>
+<script id="presentation-data" type="application/json">{"slides":[{"n":1,"img":"assets/slides/slide-001.jpg","title":"Тестовый слайд 1"},{"n":2,"img":"assets/slides/slide-002.jpg","title":"Тестовый слайд 2"},{"n":3,"img":"assets/slides/slide-003.jpg","title":"Тестовый слайд 3"}],"sections":[{"id":"section-1","label":"Presentation","title":"Presentation","range":[1,3],"desc":"Explore the complete source deck."}],"keySlides":[1,2,3]}</script>
+<script>
+const presentationData=JSON.parse(document.getElementById('presentation-data').textContent);
+const slides=presentationData.slides, sections=presentationData.sections, keySlides=new Set(presentationData.keySlides);
+const escapeHtml=value=>String(value).replace(/[&<>"']/g,char=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[char]);
+const grid=document.getElementById('slideGrid'), filters=document.getElementById('filters'), search=document.getElementById('slideSearch'), empty=document.getElementById('emptyState');
+let activeFilter='all', query='';
+function sectionFor(n){return sections.find(s=>n>=s.range[0]&&n<=s.range[1])||{id:'other',label:'Slides'};}
+function renderStory(){document.getElementById('storyList').innerHTML=sections.map(s=>`<article class="story-card reveal"><div><div class="range">${String(s.range[0]).padStart(2,'0')}–${String(s.range[1]).padStart(2,'0')} · ${escapeHtml(s.label)}</div></div><div><h3>${escapeHtml(s.title)}</h3><p>${escapeHtml(s.desc)}</p></div><button data-open-slide="${s.range[0]}">View section →</button></article>`).join('');}
+function renderFilters(){filters.innerHTML=`<button class="filter active" data-filter="all">All ${slides.length}</button>`+sections.map(s=>`<button class="filter" data-filter="${s.id}">${escapeHtml(s.label)}</button>`).join('');}
+function renderSlides(){const q=query.trim().toLowerCase();const list=slides.filter(s=>{const sec=sectionFor(s.n);return(activeFilter==='all'||sec.id===activeFilter)&&(!q||s.title.toLowerCase().includes(q)||String(s.n).includes(q));});grid.innerHTML=list.map(s=>{const sec=sectionFor(s.n);return `<article class="slide-card" tabindex="0" role="button" aria-label="Открыть слайд ${s.n}: ${escapeHtml(s.title)}" data-open-slide="${s.n}"><div class="slide-thumb"><img loading="lazy" src="${s.img}" alt="Миниатюра слайда ${s.n}"><span class="slide-no">${String(s.n).padStart(2,'0')}</span>${keySlides.has(s.n)?'<span class="key-badge">KEY</span>':''}</div><div class="slide-meta"><h4>${escapeHtml(s.title)}</h4><span>${escapeHtml(sec.label)} · Slide ${s.n}</span></div></article>`;}).join('');empty.style.display=list.length?'none':'block';}
+renderStory();renderFilters();renderSlides();
+filters.addEventListener('click',e=>{const b=e.target.closest('[data-filter]');if(!b)return;activeFilter=b.dataset.filter;filters.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));renderSlides();});
+search.addEventListener('input',e=>{query=e.target.value;renderSlides();});
+
+function setSafeHash(h){if(location.protocol==='file:')return;try{history.replaceState(null,'',h)}catch(e){}}
+const modal=document.getElementById('slideModal'), modalImg=document.getElementById('modalImage'), modalTitle=document.getElementById('modalTitle'), modalCounter=document.getElementById('modalCounter');let current=1,lastFocus=null;
+function openSlide(n){current=Math.max(1,Math.min(slides.length,Number(n)));const s=slides[current-1];lastFocus=document.activeElement;modalImg.src=s.img;modalImg.alt=`Слайд ${s.n}: ${s.title}`;modalTitle.textContent=`${String(s.n).padStart(2,'0')} · ${s.title}`;modalCounter.textContent=`${s.n} / ${slides.length}`;modal.classList.add('open');document.body.classList.add('modal-open');document.getElementById('closeModal').focus();setSafeHash(`#slide-${s.n}`);}
+function closeModal(){modal.classList.remove('open');document.body.classList.remove('modal-open');setSafeHash('#slides');if(lastFocus&&lastFocus.focus)lastFocus.focus();}
+function step(d){openSlide(current+d);}
+document.addEventListener('click',e=>{const el=e.target.closest('[data-open-slide]');if(el)openSlide(el.dataset.openSlide);});
+document.addEventListener('keydown',e=>{if(e.target.closest('.slide-card')&&(e.key==='Enter'||e.key===' ')){e.preventDefault();openSlide(e.target.closest('.slide-card').dataset.openSlide);return;}if(!modal.classList.contains('open'))return;if(e.key==='Escape')closeModal();if(e.key==='ArrowLeft')step(-1);if(e.key==='ArrowRight')step(1);});
+document.getElementById('closeModal').onclick=closeModal;document.getElementById('prevSlide').onclick=()=>step(-1);document.getElementById('nextSlide').onclick=()=>step(1);modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});document.getElementById('backSummary').onclick=()=>{closeModal();document.getElementById('summary').scrollIntoView({behavior:'smooth'});};
+
+const navLinks=[...document.querySelectorAll('.navlinks a')];const observed=[...document.querySelectorAll('main section[id]')].filter(s=>['summary','takeaways','numbers','story','slides'].includes(s.id));const spy=new IntersectionObserver(entries=>{entries.forEach(en=>{if(en.isIntersecting)navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+en.target.id));})},{rootMargin:'-35% 0px -55% 0px',threshold:0});observed.forEach(s=>spy.observe(s));
+const reveals=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');reveals.unobserve(e.target);}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>reveals.observe(el));
+const hash=location.hash.match(/^#slide-(\d+)$/);if(hash)setTimeout(()=>openSlide(hash[1]),120);
+</script>
+</body></html>

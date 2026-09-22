@@ -1,0 +1,26 @@
+{
+  "slug": "pptx-auto",
+  "title": "Тестовый слайд 1",
+  "source": {
+    "name": "presentation-e2e.pptx",
+    "sha256": "bfe483132eb482a6a54d6a4f1ebcd50ae2a4c4b5b46b90dc8856b90f16ec8d4d",
+    "slide_count": 3
+  },
+  "generated_sections": [
+    {
+      "title": "Presentation",
+      "text": "Explore the complete source deck.",
+      "start_slide": 1,
+      "end_slide": 3
+    }
+  ],
+  "asset_paths": [
+    "assets/slides/slide-001.jpg",
+    "assets/slides/slide-002.jpg",
+    "assets/slides/slide-003.jpg"
+  ],
+  "generated_at_utc": "2026-09-21T13:39:42.714580Z",
+  "validation": {
+    "status": "passed"
+  }
+}
