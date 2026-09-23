@@ -1,0 +1,60 @@
+{
+  "slug": "26f762da7141bfb6",
+  "title": "VOIS: план роста продаж на маркетплейсах",
+  "source": {
+    "name": "AgADDKUAAoq0mUk-vois-1-.pdf",
+    "sha256": "26f762da7141bfb672e029bc1e6c8223a1225622390dfe15489edf710b72fd4d",
+    "slide_count": 13
+  },
+  "generated_sections": [
+    {
+      "title": "Экспертиза и технологическая база",
+      "text": "Adlabs представляет направления Performance, E-Commerce, Media 360°, Brandformance, Mobile и SEO/GEO, опираясь на команду из более чем 50 сертифицированных специалистов и собственные технологические решения.",
+      "start_slide": 1,
+      "end_slide": 4
+    },
+    {
+      "title": "Стратегия VOIS",
+      "text": "Предложение фокусируется на продажах в нижней части воронки: женская аудитория 25–45 лет, CRM и LAL, брендовый и товарный Яндекс Директ, а также посевы в каналах.",
+      "start_slide": 5,
+      "end_slide": 7
+    },
+    {
+      "title": "Новая аудитория через интерактив",
+      "text": "Дополнительный контур включает тест или чат-бот с персональными рекомендациями и промокодом, а также партнёрское размещение оффера с отслеживанием заказов.",
+      "start_slide": 8,
+      "end_slide": 9
+    },
+    {
+      "title": "Экономика и сотрудничество",
+      "text": "Медиаплан фиксирует распределение бюджета, прогноз продаж, CPO и ДРР по каналам; условия предусматривают комбинированную схему агентского вознаграждения и аналитические сервисы.",
+      "start_slide": 10,
+      "end_slide": 11
+    },
+    {
+      "title": "Подтверждение результатами",
+      "text": "Кейсы показывают рост показателей после работы с сообщениями, фидом и приоритетными продуктами, а также вклад новых beauty-продуктов в доход и продажи из Яндекс Директа.",
+      "start_slide": 12,
+      "end_slide": 13
+    }
+  ],
+  "asset_paths": [
+    "assets/slides/slide-001.jpg",
+    "assets/slides/slide-002.jpg",
+    "assets/slides/slide-003.jpg",
+    "assets/slides/slide-004.jpg",
+    "assets/slides/slide-005.jpg",
+    "assets/slides/slide-006.jpg",
+    "assets/slides/slide-007.jpg",
+    "assets/slides/slide-008.jpg",
+    "assets/slides/slide-009.jpg",
+    "assets/slides/slide-010.jpg",
+    "assets/slides/slide-011.jpg",
+    "assets/slides/slide-012.jpg",
+    "assets/slides/slide-013.jpg"
+  ],
+  "generated_at_utc": "2026-09-23T07:20:21.001400Z",
+  "validation": {
+    "status": "passed"
+  }
+}
