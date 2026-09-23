@@ -27,8 +27,9 @@ img{max-width:100%;display:block}
 .navlinks a{font-size:13px;font-weight:720;padding:10px 12px;border-radius:999px;color:#5f6168;transition:.2s ease}
 .navlinks a:hover,.navlinks a.active{background:#fff;color:#111;box-shadow:0 4px 18px rgba(0,0,0,.05)}
 .hero{padding:54px 0 56px;min-height:calc(100vh - 72px);display:grid;align-items:center}
-.hero-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
-.hero-copy h1{font-size:clamp(58px,7vw,100px);line-height:.87;letter-spacing:-.065em;margin:16px 0 26px;max-width:620px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:56px;align-items:center}
+.hero-copy{min-width:0;position:relative;z-index:1}
+.hero-copy h1{font-size:clamp(48px,5.4vw,84px);line-height:.9;letter-spacing:-.06em;margin:16px 0 26px;max-width:100%;overflow-wrap:anywhere;text-wrap:balance}
 .hero-copy h1 span{display:block;color:var(--blue)}
 .hero-copy p{font-size:20px;line-height:1.46;max-width:650px;color:#3f4248;margin:0 0 32px}
 .cta-row{display:flex;gap:10px;flex-wrap:wrap}
