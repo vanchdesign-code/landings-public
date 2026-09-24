@@ -26,6 +26,9 @@ img{max-width:100%;display:block}
 .navlinks{display:flex;gap:6px;align-items:center}
 .navlinks a{font-size:13px;font-weight:720;padding:10px 12px;border-radius:999px;color:#5f6168;transition:.2s ease}
 .navlinks a:hover,.navlinks a.active{background:#fff;color:#111;box-shadow:0 4px 18px rgba(0,0,0,.05)}
+.menu-toggle{display:none;border:1px solid rgba(16,17,20,.14);background:#fff;color:#111;width:42px;height:42px;border-radius:50%;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4px}
+.menu-toggle span{display:block;width:16px;height:2px;background:currentColor;border-radius:2px;transition:.2s ease}
+.mobile-menu{display:none}
 main{display:flex;flex-direction:column}
 .hero{padding:54px 0 56px;min-height:calc(100vh - 72px);display:grid;align-items:center}
 .hero-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:56px;align-items:center}
@@ -112,7 +115,7 @@ main{display:flex;flex-direction:column}
 .modal-bottom .hint{font-size:11px;opacity:.62}
 .modal-bottom .counter{font-size:12px;font-weight:900}
 .reveal{opacity:0;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease} .reveal.in{opacity:1;transform:none}
-@media(max-width:980px){.navlinks{display:none}.hero{min-height:auto;padding:44px 0 78px}.hero-grid{grid-template-columns:1fr;gap:44px}.hero-copy h1{font-size:70px}.hero-visual{max-width:800px}.section-head{grid-template-columns:1fr;gap:12px}.numbers{grid-template-columns:repeat(2,1fr)}.slide-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:980px){.navlinks{display:none}.menu-toggle{display:flex}.topbar{position:sticky}.nav{position:relative}.mobile-menu{position:absolute;right:14px;top:calc(100% + 8px);width:min(290px,calc(100vw - 28px));padding:10px;background:rgba(255,255,255,.97);border:1px solid rgba(16,17,20,.1);border-radius:22px;box-shadow:0 18px 50px rgba(16,17,20,.14);z-index:60}.mobile-menu.open{display:grid;gap:3px}.mobile-menu a{display:block;padding:13px 14px;border-radius:14px;color:#24252a;font-size:14px;font-weight:750}.mobile-menu a:hover,.mobile-menu a:focus{background:#f1f1ee}.hero{min-height:auto;padding:44px 0 78px}.hero-grid{grid-template-columns:1fr;gap:44px}.hero-copy h1{font-size:70px}.hero-visual{max-width:800px}.section-head{grid-template-columns:1fr;gap:12px}.numbers{grid-template-columns:repeat(2,1fr)}.slide-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:720px){.container{width:min(100% - 28px,1180px)}.nav{height:64px}.brand-project,.brand-divider{display:none}.hero{padding-top:28px}.hero-copy h1{font-size:54px}.hero-copy p{font-size:17px}.hero-chip{position:relative;left:auto;bottom:auto;margin:-16px 14px 0;max-width:none}.section{padding:70px 0}.summary-grid{grid-template-columns:1fr}.takeaway{grid-template-columns:52px 1fr;gap:14px}.takeaway button{grid-column:2;justify-self:start}.numbers{grid-template-columns:1fr 1fr}.metric{min-height:180px}.metric .value{font-size:40px}.story-card{grid-template-columns:1fr;gap:10px}.story-card button{justify-self:start}.slide-grid{grid-template-columns:repeat(2,1fr);gap:10px}.search{width:100%;min-width:0}.modal{padding:0}.modal-shell{width:100vw;height:100dvh;max-height:none;border-radius:0}.modal-stage img{max-height:calc(100dvh - 120px)}.modal-bottom .hint{display:none}}
 @media(max-width:460px){.hero-copy h1{font-size:46px}.numbers{grid-template-columns:1fr}.slide-grid{grid-template-columns:1fr 1fr}.slide-meta h4{font-size:12px}.slide-meta{padding:10px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
@@ -123,7 +126,11 @@ main{display:flex;flex-direction:column}
  <div class="container nav">
   <a class="brand" href="#top"><span class="brand-mark"><b>Презентация</b></span><span class="brand-divider"></span><span class="brand-project">VOIS: план роста продаж на маркетплейсах</span></a>
   <nav class="navlinks" aria-label="Основная навигация">
-   <a href="#numbers">Ключевые цифры</a><a href="#story">Структура</a><a href="#takeaways">Ключевые мысли</a><a href="#summary">Обзор</a><a href="#slides">Слайды</a>
+   <a href="#summary">Обзор</a><a href="#numbers">Ключевые цифры</a><a href="#story">Структура</a><a href="#takeaways">Ключевые мысли</a><a href="#slides">Слайды</a>
+  </nav>
+  <button class="menu-toggle" id="menuToggle" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Быстрая навигация">
+   <a href="#summary">01 · Краткое содержание</a><a href="#numbers">02 · Ключевые цифры</a><a href="#story">03 · Структура</a><a href="#takeaways">04 · Ключевые мысли</a><a href="#slides">05 · Навигатор по слайдам</a>
   </nav>
  </div>
 </header>
@@ -156,7 +163,7 @@ main{display:flex;flex-direction:column}
 
 <section class="section" id="takeaways">
  <div class="container">
-  <div class="section-head"><div class="eyebrow">03 · Ключевые мысли</div><h2>Ключевые мысли презентации.</h2></div>
+  <div class="section-head"><div class="eyebrow">04 · Ключевые мысли</div><h2>Ключевые мысли презентации.</h2></div>
   <div class="takeaways">
    <article class="takeaway reveal"><div class="index">1</div><div><h3>Нижняя часть воронки — приоритет</h3><p>Основной сценарий строится вокруг конвертации уже привлечённого трафика в продажи.</p></div><button data-open-slide="6">Открыть слайд 6 →</button></article>
    <article class="takeaway reveal"><div class="index">2</div><div><h3>Сегменты можно расширять данными</h3><p>Базовая аудитория дополняется CRM-сегментами и похожими аудиториями LAL.</p></div><button data-open-slide="6">Открыть слайд 6 →</button></article>
@@ -172,7 +179,7 @@ main{display:flex;flex-direction:column}
 
 <section class="section" id="numbers">
  <div class="container">
-  <div class="section-head"><div class="eyebrow">01 · Ключевые цифры</div><h2>Цифры, которые задают рамку решения.</h2></div>
+  <div class="section-head"><div class="eyebrow">02 · Ключевые цифры</div><h2>Цифры, которые задают рамку решения.</h2></div>
   <div class="numbers">
 
    <article class="metric reveal" style="--accent:#57346c"><div class="value">2,6 млн ₽</div><div><div class="label">бюджет основного продвижения</div><button class="source slide-link" data-open-slide="10">Слайд 10 →</button></div></article>
@@ -187,7 +194,7 @@ main{display:flex;flex-direction:column}
 
 <section class="section" id="story">
  <div class="container">
-  <div class="section-head"><div class="eyebrow">02 · Структура</div><h2>Структура презентации</h2></div>
+  <div class="section-head"><div class="eyebrow">03 · Структура</div><h2>Структура презентации</h2></div>
   <div class="story" id="storyList"></div>
  </div>
 </section>
@@ -234,6 +241,7 @@ document.addEventListener('keydown',e=>{if(e.target.closest('.slide-card')&&(e.k
 document.getElementById('closeModal').onclick=closeModal;document.getElementById('prevSlide').onclick=()=>step(-1);document.getElementById('nextSlide').onclick=()=>step(1);modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});document.getElementById('backSummary').onclick=()=>{closeModal();document.getElementById('summary').scrollIntoView({behavior:'smooth'});};
 
 const navLinks=[...document.querySelectorAll('.navlinks a')];const observed=[...document.querySelectorAll('main section[id]')].filter(s=>['summary','takeaways','numbers','story','slides'].includes(s.id));const spy=new IntersectionObserver(entries=>{entries.forEach(en=>{if(en.isIntersecting)navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+en.target.id));})},{rootMargin:'-35% 0px -55% 0px',threshold:0});observed.forEach(s=>spy.observe(s));
+const menuToggle=document.getElementById('menuToggle');const mobileMenu=document.getElementById('mobileMenu');const closeMobileMenu=()=>{mobileMenu.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');menuToggle.setAttribute('aria-label','Открыть меню');};menuToggle.onclick=()=>{const open=!mobileMenu.classList.contains('open');mobileMenu.classList.toggle('open',open);menuToggle.setAttribute('aria-expanded',String(open));menuToggle.setAttribute('aria-label',open?'Закрыть меню':'Открыть меню');};mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMobileMenu));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMobileMenu();});
 const reveals=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');reveals.unobserve(e.target);}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>reveals.observe(el));
 const hash=location.hash.match(/^#slide-(\d+)$/);if(hash)setTimeout(()=>openSlide(hash[1]),120);
 </script>
