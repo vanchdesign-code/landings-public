@@ -26,10 +26,11 @@ img{max-width:100%;display:block}
 .navlinks{display:flex;gap:6px;align-items:center}
 .navlinks a{font-size:13px;font-weight:720;padding:10px 12px;border-radius:999px;color:#5f6168;transition:.2s ease}
 .navlinks a:hover,.navlinks a.active{background:#fff;color:#111;box-shadow:0 4px 18px rgba(0,0,0,.05)}
+main{display:flex;flex-direction:column}
 .hero{padding:54px 0 56px;min-height:calc(100vh - 72px);display:grid;align-items:center}
 .hero-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:56px;align-items:center}
 .hero-copy{min-width:0;position:relative;z-index:1}
-.hero-copy h1{font-size:clamp(48px,5.4vw,84px);line-height:.9;letter-spacing:-.06em;margin:16px 0 26px;max-width:100%;overflow-wrap:anywhere;text-wrap:balance}
+.hero-copy h1{font-size:clamp(42px,4.5vw,70px);line-height:.94;letter-spacing:-.055em;margin:16px 0 26px;max-width:100%;overflow-wrap:anywhere;text-wrap:balance}
 .hero-copy h1 span{display:block;color:var(--blue)}
 .hero-copy p{font-size:20px;line-height:1.46;max-width:650px;color:#3f4248;margin:0 0 32px}
 .cta-row{display:flex;gap:10px;flex-wrap:wrap}
@@ -41,6 +42,10 @@ img{max-width:100%;display:block}
 .hero-frame img{width:100%;aspect-ratio:16/9;object-fit:cover}
 .hero-chip{position:absolute;left:-24px;bottom:-24px;max-width:260px;background:linear-gradient(130deg,rgba(32,47,128,.95),rgba(201,45,91,.92));color:#fff;padding:22px 24px;border-radius:24px 46px 24px 24px;box-shadow:0 20px 55px rgba(78,47,96,.25)}
 .hero-chip strong{display:block;font-size:28px;letter-spacing:-.045em} .hero-chip span{font-size:13px;opacity:.83;line-height:1.4}
+.hero-chip{display:none}
+.hero{display:flex;flex-direction:column}
+.hero-grid{width:100%}
+#numbers{order:1}#story{order:2}#takeaways{order:3}#summary{order:4}#slides{order:5}
 .section{padding:94px 0;border-top:1px solid rgba(16,17,20,.09)}
 .section-head{display:grid;grid-template-columns:260px 1fr;gap:50px;align-items:end;margin-bottom:42px}
 .section-head h2{font-size:clamp(38px,5vw,62px);line-height:.94;letter-spacing:-.052em;margin:0;max-width:900px}
@@ -118,7 +123,7 @@ img{max-width:100%;display:block}
  <div class="container nav">
   <a class="brand" href="#top"><span class="brand-mark"><b>Презентация</b></span><span class="brand-divider"></span><span class="brand-project">VOIS: план роста продаж на маркетплейсах</span></a>
   <nav class="navlinks" aria-label="Основная навигация">
-   <a href="#summary">Обзор</a><a href="#takeaways">Выводы</a><a href="#numbers">Ключевые цифры</a><a href="#story">Структура</a><a href="#slides">Слайды</a>
+   <a href="#numbers">Ключевые цифры</a><a href="#story">Структура</a><a href="#takeaways">Ключевые мысли</a><a href="#summary">Обзор</a><a href="#slides">Слайды</a>
   </nav>
  </div>
 </header>
@@ -129,11 +134,11 @@ img{max-width:100%;display:block}
    <div class="eyebrow">Предложение Adlabs · октябрь 2026 — март 2027</div>
    <h1 id="hero-title">VOIS: план роста продаж на маркетплейсах <span>рост продаж</span></h1>
    <p>Стратегия с фокусом на нижнюю часть воронки объединяет Яндекс Директ, товарные кампании и посевы. Основной план предусматривает бюджет 2,6 млн ₽, 4,8 тыс. продаж и ДРР 18,0%; интерактивные механики вынесены в отдельный контур привлечения новой аудитории.</p>
-   <div class="cta-row"><a class="btn" href="#takeaways">К главным выводам <span>↓</span></a><button class="btn secondary" data-open-slide="6">Открыть презентацию →</button></div>
+   <div class="cta-row"><a class="btn" href="#takeaways">К ключевым мыслям <span>↓</span></a><button class="btn secondary" data-open-slide="6">Открыть презентацию →</button></div>
   </div>
   <div class="hero-visual reveal">
    <button class="hero-frame" data-open-slide="6" aria-label="Открыть слайд 6"><img src="assets/slides/slide-006.jpg" alt="Слайд 6: Стратегия нижней воронки"></button>
-   <div class="hero-chip"><strong>13 слайдов</strong><span>Краткий слой поверх исходной презентации, оригинальные слайды — по клику.</span></div>
+
   </div>
  </div>
 </section>
@@ -151,7 +156,7 @@ img{max-width:100%;display:block}
 
 <section class="section" id="takeaways">
  <div class="container">
-  <div class="section-head"><div class="eyebrow">02 · Главные выводы</div><h2>Главные выводы презентации.</h2></div>
+  <div class="section-head"><div class="eyebrow">03 · Ключевые мысли</div><h2>Ключевые мысли презентации.</h2></div>
   <div class="takeaways">
    <article class="takeaway reveal"><div class="index">1</div><div><h3>Нижняя часть воронки — приоритет</h3><p>Основной сценарий строится вокруг конвертации уже привлечённого трафика в продажи.</p></div><button data-open-slide="6">Открыть слайд 6 →</button></article>
    <article class="takeaway reveal"><div class="index">2</div><div><h3>Сегменты можно расширять данными</h3><p>Базовая аудитория дополняется CRM-сегментами и похожими аудиториями LAL.</p></div><button data-open-slide="6">Открыть слайд 6 →</button></article>
@@ -167,11 +172,9 @@ img{max-width:100%;display:block}
 
 <section class="section" id="numbers">
  <div class="container">
-  <div class="section-head"><div class="eyebrow">03 · Ключевые цифры</div><h2>Цифры, которые задают рамку решения.</h2></div>
+  <div class="section-head"><div class="eyebrow">01 · Ключевые цифры</div><h2>Цифры, которые задают рамку решения.</h2></div>
   <div class="numbers">
-   <article class="metric reveal" style="--accent:#ef4557"><div class="value">22+ года</div><div><div class="label">опыт развития бизнеса клиентов</div><button class="source slide-link" data-open-slide="1">Слайд 1 →</button></div></article>
-   <article class="metric reveal" style="--accent:#087bc1"><div class="value">50+</div><div><div class="label">сертифицированных специалистов</div><button class="source slide-link" data-open-slide="3">Слайд 3 →</button></div></article>
-   <article class="metric reveal" style="--accent:#17aee4"><div class="value">5+ лет</div><div><div class="label">средний стаж специалиста в Adlabs</div><button class="source slide-link" data-open-slide="3">Слайд 3 →</button></div></article>
+
    <article class="metric reveal" style="--accent:#57346c"><div class="value">2,6 млн ₽</div><div><div class="label">бюджет основного продвижения</div><button class="source slide-link" data-open-slide="10">Слайд 10 →</button></div></article>
    <article class="metric reveal" style="--accent:#ff4f00"><div class="value">4,8 тыс.</div><div><div class="label">прогноз продаж основного продвижения</div><button class="source slide-link" data-open-slide="10">Слайд 10 →</button></div></article>
    <article class="metric reveal" style="--accent:#ef4557"><div class="value">18,0%</div><div><div class="label">прогнозный ДРР основного продвижения</div><button class="source slide-link" data-open-slide="10">Слайд 10 →</button></div></article>
@@ -184,7 +187,7 @@ img{max-width:100%;display:block}
 
 <section class="section" id="story">
  <div class="container">
-  <div class="section-head"><div class="eyebrow">04 · История и разделы</div><h2>Исходная история презентации — без перестройки смысла.</h2></div>
+  <div class="section-head"><div class="eyebrow">02 · Структура</div><h2>Структура презентации — без перестройки смысла.</h2></div>
   <div class="story" id="storyList"></div>
  </div>
 </section>
